@@ -1,4 +1,5 @@
-let output = document.getElementById('output');
+let outputColors = document.getElementById('output');
+let copyToClipboard = document.getElementById('clipboard');
 let showtext = document.querySelector('h2');
 let angle = document.getElementById('angle');
 
@@ -27,7 +28,7 @@ function inputUpdated(e) {
     // update sample code
     let leftRGB = hexToRGB(left);
     let rightRGB = hexToRGB(right);
-    output.innerHTML = `<span class="code-literal">${angle.value}deg</span>, <span class="code-literal">rgba(${leftRGB.join(',')})</span>, <span class="code-literal">rgba(${rightRGB.join(',')})</span>`;
+    outputColors.innerHTML = `<span class="code-literal">${angle.value}deg</span>, <span class="code-literal">rgba(${leftRGB.join(',')})</span>, <span class="code-literal">rgba(${rightRGB.join(',')})</span>`;
 }
 
 
@@ -67,3 +68,14 @@ function averageColors(color1, color2) {
     return ans;
 }
 
+
+function setClipboard(text) {
+    navigator.clipboard.write(text).then(
+        function () {
+            console.log('copied');
+        },
+        function () {
+            alert('Oops, something went wrong - please select and copy manually.')
+        }
+    );
+}

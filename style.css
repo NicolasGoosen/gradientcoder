@@ -216,14 +216,27 @@ input[type="text"] {
     outline: none;
 }
 input[type="text"]:focus {
-    border-color: red;
+    border-color: var( --left-color, #FF00FF );
 }
-
-
 input[type="color"] {
-    border-color: red;
+    border-color: var( --left-color, #FF00FF );
 }
 
+header > div {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+/* color pickers */
+header > div > div:last-child {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+header > div > div:last-child > div { margin-bottom: 1rem; };
+header > div > div:last-child > div:last-child { margin-bottom: 0; };
 
 
 

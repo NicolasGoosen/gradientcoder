@@ -1,13 +1,7 @@
 The inputs get linked to actual styling using CSS variables.
 
 ### todo
-- [ ] link up color variables
-- [ ] link up custom text
-- [ ] link up angle and fontsize
 - [ ] get copy button working for generated code
-- [ ] research and plan font select menu (don't actually do it yet)
-
-- [ ] add randomiser (https://css-tricks.com/snippets/javascript/random-hex-color/)
 
 - [ ] how to average two colors (just rgb values?)
 - [ ] how to generate a contrasting color (for text against background)
@@ -26,6 +20,9 @@ The inputs get linked to actual styling using CSS variables.
 - [ ] responsive text sizing (make bigger above 1000px)
 
 - [ ] pointer: cursor on all inputs
+
+- [ ] research and plan font select menu (don't actually do it yet)
+- [ ] add randomiser (https://css-tricks.com/snippets/javascript/random-hex-color/)
 
 
 ### other ideas
