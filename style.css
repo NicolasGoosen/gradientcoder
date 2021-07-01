@@ -57,7 +57,7 @@ h1 {
 
 h2 {
     font-family: 'Raleway', sans-serif;
-    font-size: var( --fontsize, 78px ); 
+    font-size: calc(var( --fontsize, 78 ) * 1px); 
     font-style: normal;
     font-weight: 900; /* black */
     letter-spacing: 0.000em;  /* adobe xd's unit is 1/1000em */
@@ -121,7 +121,12 @@ left/right margins are:
     text-fill-color: transparent;
     -webkit-text-fill-color: transparent;
     background-size: 100% auto;
-    background-image: linear-gradient( var( --angle, 30deg ), var( --left-color, rgb(255,0,255) ), var( --right-color, rgb(0,0,255) ));
+    background-image: 
+        linear-gradient( 
+            calc( var( --angle, 30 ) * 1deg ), 
+            var( --left-color, rgb(255,0,255) ), 
+            var( --right-color, rgb(0,0,255) )
+        );
 }
 
 /* Main Section
