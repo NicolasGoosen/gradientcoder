@@ -16,12 +16,21 @@
 
 
 /* Variables
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-:root {
+––––––––––––––––––––––––––––––––––––––––––––––––––
+These aren't set by CSS, but in the JS.
+So must ALWAYS supply a default/fallback when
+calling them because on pageload they aren't set.
 
-    --left-color: mediumpurple;
-    --right-color: indianred;
+The defaults values are: 
+
     --background-color: #000;
+    --left-color: rgb(255,0,255);
+    --right-color: rgb(0,0,255);
+    --angle: 30deg;
+    --fontsize: 78px;
+    ** haven't dealt with font-name yet **
+*/
+:root {
 
 }
 
@@ -48,7 +57,7 @@ h1 {
 
 h2 {
     font-family: 'Raleway', sans-serif;
-    font-size: calc( (78 / 16) * 1rem ); 
+    font-size: var( --fontsize, 78px ); 
     font-style: normal;
     font-weight: 900; /* black */
     letter-spacing: 0.000em;  /* adobe xd's unit is 1/1000em */
@@ -112,7 +121,7 @@ left/right margins are:
     text-fill-color: transparent;
     -webkit-text-fill-color: transparent;
     background-size: 100% auto;
-    background-image: linear-gradient(30deg, var( --left-color ), var( --right-color ));
+    background-image: linear-gradient( var( --angle, 30deg ), var( --left-color, rgb(255,0,255) ), var( --right-color, rgb(0,0,255) ));
 }
 
 /* Main Section
@@ -130,7 +139,7 @@ left/right margins are:
     height: 100vh;
     width: 100%;
     /*border: 3px red solid;*/
-    background-color: var( --background-color );
+    background-color: var( --background-color, #000 );
 
     padding-top: 2vh;
     padding-left:  var( --grid-padding ); 
@@ -172,7 +181,7 @@ footer > div {
     letter-spacing: -0.020em;  /* adobe xd's unit is 1/1000em */
     line-height: 1.000; /* redundant */
     white-space: nowrap;
-    color: var( --background-color );
+    color: var( --background-color, #000 );
 }
 .footer-contacts {
     display: flex;

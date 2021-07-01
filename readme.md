@@ -1,3 +1,5 @@
+The inputs get linked to actual styling using CSS variables.
+
 ### todo
 - [ ] link up color variables
 - [ ] link up custom text
@@ -20,6 +22,8 @@
 - [ ] style select input custom text
 - [ ] link inputs color to variable
 - [ ] responsive text sizing (make bigger above 1000px)
+
+- [ ] pointer: cursor on all inputs
 
 
 ### other ideas
