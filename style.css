@@ -26,6 +26,7 @@ The defaults values are:
     --background-color: #000;
     --left-color: rgb(255,0,255);
     --right-color: rgb(0,0,255);
+    --average-color: *no default*
     --angle: 30deg;
     --fontsize: 78px;
     ** haven't dealt with font-name yet **
@@ -174,7 +175,7 @@ footer {
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
-    background-color: lightpink;
+    background-color: var( --average-color, #7F00FF );
     padding: 1rem var( --grid-padding );
 }
 footer > div {
@@ -198,7 +199,7 @@ footer > div {
     width:  calc( (40 / 16) * 1rem );
     height: calc( (40 / 16) * 1rem );
     border-radius: 100%;
-    background-color: hotpink;
+    background-color: var( --average-color, #7F00FF );
     margin-right: calc( (12 / 16) * 1rem );
     position: relative;
     bottom: calc( (34 / 16) * 1rem );
