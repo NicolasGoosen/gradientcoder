@@ -9,6 +9,7 @@ document.querySelectorAll('input:not([type="text"])').forEach(input => {
 
 document.querySelector('input[type="text"]').addEventListener('input', textUpdated);
 
+document.querySelector('select').addEventListener('input', fontUpdated);
 
 function inputUpdated(e) {
     document.documentElement.style.setProperty(
@@ -35,6 +36,42 @@ function inputUpdated(e) {
 function textUpdated(e) {
     console.log(e.target.value);
     showtext.innerHTML = e.target.value == '' ? 'Type Something' : e.target.value;
+}
+
+
+function fontUpdated(e) {
+    let h2 = document.querySelector('h2');
+
+    switch (e.target.value) {
+        case 'roboto':
+            h2.style.fontFamily = 'Roboto Mono';
+            h2.style.fontStyle = 'normal';
+            h2.style.fontWeight = '700';
+            h2.style.letterSpacing = "-0.020em";
+            break;
+
+        case 'lobster':
+            h2.style.fontFamily = 'Lobster';
+            h2.style.fontStyle = 'normal';
+            h2.style.fontWeight = '400';
+            h2.style.letterSpacing = "0.000em";
+            break;
+
+        case 'abril':
+            h2.style.fontFamily = 'Abril Fatface';
+            h2.style.fontStyle = 'normal';
+            h2.style.fontWeight = '400';
+            h2.style.letterSpacing = '0.000em';
+            break;
+
+        case 'raleway':
+        default:
+            h2.style.fontFamily = 'Raleway';
+            h2.style.fontStyle = 'normal';
+            h2.style.fontWeight = '900';
+            h2.style.letterSpacing = '-0.020em';
+            break;
+    }
 }
 
 

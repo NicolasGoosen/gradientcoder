@@ -32,7 +32,7 @@ The defaults values are:
     ** haven't dealt with font-name yet **
 */
 :root {
-
+    --font-select:  'Raleway';
 }
 
 /* Z-indexex
@@ -46,7 +46,7 @@ The defaults values are:
 –––––––––––––––––––––––––––––––––––––––––––––––––– 
 */
 h1 {
-    font-family: 'Raleway', sans-serif;
+    font-family: var( --font-select ), sans-serif;
     font-size: calc( (22 / 16) * 1rem ); 
     font-style: normal;
     font-weight: 900; /* black */
@@ -59,10 +59,11 @@ h1 {
 
 h2 {
     font-family: 'Raleway', sans-serif;
-    font-size: calc(var( --fontsize, 78 ) * 1px); 
     font-style: normal;
-    font-weight: 900; /* black */
-    letter-spacing: 0.000em;  /* adobe xd's unit is 1/1000em */
+    font-weight: 900; 
+    letter-spacing: -0.020em;
+
+    font-size: calc(var( --fontsize, 78 ) * 1px); 
     line-height: 1.100; /* generally a good one? */
     text-align: center;
     padding: 0.2em 0;
@@ -235,11 +236,14 @@ header > div > div:last-child {
     justify-content: flex-start;
     align-items: flex-end;
 }
-header > div > div:last-child > div { margin-bottom: 1rem; };
-header > div > div:last-child > div:last-child { margin-bottom: 0; };
+header > div > div:last-child > div { margin-bottom: 1rem; }
+header > div > div:last-child > div:last-child { margin-bottom: 0; }
 
 
 
+input:not([type="text"]) {
+    border: 2px solid red;
+}
 
 
 
