@@ -64,6 +64,7 @@ label {
     letter-spacing: 0.000em;  /* adobe xd's unit is 1/1000em */
     line-height: 1.000; /* redundant */
     white-space: nowrap;
+    color: lightgray;
 }
 
 pre {
@@ -116,7 +117,7 @@ left/right margins are:
 
 /* Main Section
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-    .main-section > header { background-color: lightblue; }
+    /*.main-section > header { background-color: lightblue; }*/
     .main-section > aside  { background-color: lightyellow; }
     .main-section > main   { background-color: lightgreen; }
 
@@ -151,5 +152,80 @@ left/right margins are:
         align-items: center;
     }
 }
+
+
+/* Footer
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+footer {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: lightpink;
+    padding: 1rem var( --grid-padding );
+}
+footer > div {
+    font-family: 'Raleway', sans-serif;
+    font-size: calc( (14 / 16) * 1rem ); 
+    font-style: normal;
+    font-weight: 600; /* semi-bold */
+    letter-spacing: -0.020em;  /* adobe xd's unit is 1/1000em */
+    line-height: 1.000; /* redundant */
+    white-space: nowrap;
+    color: var( --background-color );
+}
+.footer-contacts {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+.footer-contacts > div {
+    width:  calc( (40 / 16) * 1rem );
+    height: calc( (40 / 16) * 1rem );
+    border-radius: 100%;
+    background-color: hotpink;
+    margin-right: calc( (12 / 16) * 1rem );
+    position: relative;
+    bottom: calc( (34 / 16) * 1rem );
+    box-shadow: 0 0.2rem 0.6rem 0 rgba(0,0,0,0.50);
+
+}
+.footer-contacts > div:last-child { margin-right: 0; }
+
+
+/* Inputs / Form Fields
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+input[type="text"] {
+    border: 1px solid transparent;
+    outline: none;
+}
+input[type="text"]:focus {
+    border-color: red;
+}
+
+
+input[type="color"] {
+    border-color: red;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
