@@ -28,7 +28,7 @@
 
     <!-- Main Content Flexbox
     ----------------------------------------- -->
-    <div>
+    <section class="main-section">
         <header>
             <h1>Text Gradient Background Generator</h1>
 
@@ -39,8 +39,7 @@
                     <label for="user-text">Type Something</label>
                     <input type="text" name="user-text" id="user-text">    
 
-
-                    <label for="font-select">Type Something</label>
+                    <label for="font-select">Font</label>
                     <select name="font-select" id="font-select">
                         <option value="raleway">Raleway</option>
                         <option value="jetbrains">JetBrains</option>
@@ -48,10 +47,15 @@
                         <option value="zapfino">Zapfino</option>
                     </select>
 
+                    <label for="angle">Angle</label>
+                    <input type="range" name="angle" id="angle"    
+                           min="0" max="360" value="30">    
 
+                    <label for="fontsize">fontsize</label>
+                    <input type="range" name="fontsize" id="fontsize"
+                           min="8" max="100" value="50">    
                 </div>
                 <div>
-                    <!-- todo: set default colors -->
                     <label for="left-color">Left</label>
                     <input type="color" name="left-color" id="left-color">    
 
@@ -64,14 +68,22 @@
             </div>            
         </header>
 
-        <main><h2>Oh, my Heading!</h2></main>
+        <main><h2 class="gradient-accent">Oh, my Heading!</h2></main>
         
         <!-- Code Sample
         ----------------------------------------- -->
         <aside>
-            
+            <label>Generated Code</label>
+<pre>
+background-clip: <span class="code-literal">text</span>;
+-webkit-background-clip: <span class="code-literal">text</span>;
+text-fill-color: <span class="code-literal">transparent</span>;
+-webkit-text-fill-color: <span class="code-literal">transparent</span>;
+background-image: <span class="code-keyword">linear-gradient</span>(<span class="code-literal">180deg</span>, <span class="code-literal">rgba(123,123,123,0.5)</span>, <span class="code-literal">rgba(123,123,123,0.5)</span>);
+background-size: <span class="code-literal">100% auto</span>;
+</pre>    
         </aside>
-    </div>
+    </section>
 
     <!-- Footer (and slightly redundant comment)
     ----------------------------------------- -->

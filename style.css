@@ -19,6 +19,10 @@
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 :root {
 
+    --left-color: mediumpurple;
+    --right-color: indianred;
+    --background-color: #000;
+
 }
 
 /* Z-indexex
@@ -33,22 +37,51 @@
 */
 h1 {
     font-family: 'Raleway', sans-serif;
-    font-size: calc( (22px / 16px) * 1rem ); 
+    font-size: calc( (22 / 16) * 1rem ); 
     font-style: normal;
     font-weight: 900; /* black */
     letter-spacing: -0.020em;  /* adobe xd's unit is 1/1000em */
-    line-height: 1.030;
+    line-height: 1.000; /* redundant */
     white-space: nowrap;
-    margin-bottom: calc( (26px / 16px) * 1rem );
+    margin-bottom: calc( (26 / 16) * 1rem );
 }
-@media ( min-width: 375px ) {
-    h1, h2 { font-size: 2.4rem; } }
-@media ( min-width: 414px ) {
-    h1, h2 { font-size: 2.8rem; } }
-@media ( min-width: 650px ) {
-    h1, h2 { font-size: 3.0rem; } }
-@media ( min-width: 768px ) {
-    h1, h2 { font-size: 3.625rem; /* 58px */ } }
+
+h2 {
+    font-family: 'Raleway', sans-serif;
+    font-size: calc( (78 / 16) * 1rem ); 
+    font-style: normal;
+    font-weight: 900; /* black */
+    letter-spacing: 0.000em;  /* adobe xd's unit is 1/1000em */
+    line-height: 1.200; /* generally a good one? */
+    text-align: center;
+}
+
+label {
+    font-family: 'Raleway', sans-serif;
+    font-size: calc( (14 / 16) * 1rem ); 
+    font-style: normal;
+    font-weight: 600; /* semi-bold */
+    letter-spacing: 0.000em;  /* adobe xd's unit is 1/1000em */
+    line-height: 1.000; /* redundant */
+    white-space: nowrap;
+}
+
+pre {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: calc( (12 / 16) * 1rem ); 
+    font-style: normal;
+    font-weight: 400; /* regular */
+    letter-spacing: -0.030em;  /* adobe xd's unit is 1/1000em */
+    line-height: calc( (19 / 16) * 1rem );
+}
+pre .code-literal {
+    color: red;
+}
+pre .code-keyword {
+    font-style: italic;
+    font-weight: 500; /* regular */
+    color: blue;
+}
 
 
 /* Responsive Grid
@@ -59,14 +92,64 @@ left/right margins are:
 [0px, 750px) -> 5%
 [750px, ...) -> at 750px = 40px margin, at 1280px = 100px margins. Do the math for a smooth transition. 
 [ ...px, inf) -> max column width should be 1280px
-
 */
 
 :root { --grid-padding: 5vw; }
 @media ( min-width: 750px ) {
-    :root { --grid-padding: calc( (100vw * 0.113px) - 44.64px ); }
+    :root { --grid-padding: calc( (100vw * 0.113) - 44.64px ); }
+}
+@media ( min-width: 1538px ) {
+    :root { --grid-padding: calc( (100vw - 1280px) / 2 ); }
 }
 
 
+/* Gradient
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.gradient-accent {
+    background-clip: text;
+    -webkit-background-clip: text;
+    text-fill-color: transparent;
+    -webkit-text-fill-color: transparent;
+    background-size: 100% auto;
+    background-image: linear-gradient(30deg, var( --left-color ), var( --right-color ));
+}
+
+/* Main Section
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+    .main-section > header { background-color: lightblue; }
+    .main-section > aside  { background-color: lightyellow; }
+    .main-section > main   { background-color: lightgreen; }
+
+.main-section {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    /*border: 3px red solid;*/
+    background-color: var( --background-color );
+
+    padding-top: 2vh;
+    padding-left:  var( --grid-padding ); 
+    padding-right: var( --grid-padding ); 
+}
+
+.main-section > * { width: 100%; }
+@media ( min-width: 1000px ) {
+    .main-section > header { order: 1; flex-grow: 0; }
+    .main-section > aside  { order: 2; flex-grow: 0; }
+    .main-section > main   { order: 3; flex-grow: 1; }
+    .main-section {
+        justify-content: flex-start;
+    }
+    .main-section > main {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+    }
+}
 
 

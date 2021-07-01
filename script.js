@@ -1,0 +1,3 @@
+
+
+let output = getElementById('output');
