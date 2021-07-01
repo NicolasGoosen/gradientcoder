@@ -1,0 +1,72 @@
+/* Boilerplate stuff
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+:root {
+    box-sizing: border-box; 
+    scroll-behavior: smooth; }
+*,
+::before,
+::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit; }
+/**:focus {
+    outline: none; }*/
+/*body {
+    -webkit-font-smoothing: antialiased; }*/
+
+
+/* Variables
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+:root {
+
+}
+
+/* Z-indexex
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+:root {
+
+}
+
+
+/* Typography
+–––––––––––––––––––––––––––––––––––––––––––––––––– 
+*/
+h1 {
+    font-family: 'Raleway', sans-serif;
+    font-size: calc( (22px / 16px) * 1rem ); 
+    font-style: normal;
+    font-weight: 900; /* black */
+    letter-spacing: -0.020em;  /* adobe xd's unit is 1/1000em */
+    line-height: 1.030;
+    white-space: nowrap;
+    margin-bottom: calc( (26px / 16px) * 1rem );
+}
+@media ( min-width: 375px ) {
+    h1, h2 { font-size: 2.4rem; } }
+@media ( min-width: 414px ) {
+    h1, h2 { font-size: 2.8rem; } }
+@media ( min-width: 650px ) {
+    h1, h2 { font-size: 3.0rem; } }
+@media ( min-width: 768px ) {
+    h1, h2 { font-size: 3.625rem; /* 58px */ } }
+
+
+/* Responsive Grid
+––––––––––––––––––––––––––––––––––––––––––––––––––
+Site isn't designed for < 750px width...
+
+left/right margins are: 
+[0px, 750px) -> 5%
+[750px, ...) -> at 750px = 40px margin, at 1280px = 100px margins. Do the math for a smooth transition. 
+[ ...px, inf) -> max column width should be 1280px
+
+*/
+
+:root { --grid-padding: 5vw; }
+@media ( min-width: 750px ) {
+    :root { --grid-padding: calc( (100vw * 0.113px) - 44.64px ); }
+}
+
+
+
+
